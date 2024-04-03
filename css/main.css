@@ -4,6 +4,36 @@
     box-sizing: border-box;
 }
 
+[class^="ico-"], [class*=" ico-"] {
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-clock:before {
+    content: "\e900";
+}
+.ico-location:before {
+    content: "\e901";
+}
+.ico-map:before {
+    content: "\e902";
+}
+.ico-play:before {
+    content: "\e903";
+}
+.ico-search:before {
+    content: "\e904";
+}
+
+
 ul[class], 
 ol[class] {
   list-style: none;
@@ -26,6 +56,9 @@ body {
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
 }
 
 .wrapper {
@@ -43,32 +76,156 @@ body {
     flex-grow: 1;
 }
 
-[class^="ico-"], [class*=" ico-"] {
-    font-family: 'icomoon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.ico-clock:before {
-    content: "\e900";
-  }
-  .ico-location:before {
-    content: "\e901";
-  }
-  .ico-map:before {
-    content: "\e902";
-  }
-  .ico-play:before {
-    content: "\e903";
-  }
-  .ico-search:before {
-    content: "\e904";
-  }
-  
+.menu {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.button {
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 119px;
+    height: 40px;
+    color: #fbfbfb;
+}
+
+.button_bg {
+    background: #0b457f;
+}
+
+.logo {
+    max-width: 209px;
+}
+
+.route-block {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+.route-block__item {
+    position: relative;
+    padding-left: 24px;
+    text-decoration: none;
+}
+
+.route-block__item_loc {
+    cursor: pointer;
+}
+
+.route-block__item::before {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 17px;
+    left: 0;
+    top: -2px;
+}
+
+.route-block__item_map::before {
+    background-image: url(../assets/images/icons/map-pin.svg);
+}
+
+.route-block__item_loc::before {
+    background-image: url(../assets/images/icons/location.svg);
+}
+
+.clock-block {
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+.clock-block__item {
+    position: relative;
+    padding-left: 24px;
+}
+
+.clock-block__item::before {
+    content: '';
+    position: absolute;
+    background-image: url(../assets/images/icons/clock.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: -1px;
+}
+
+.title {
+    margin: 0;
+    font-family: 'Inter';
+    font-weight: 500;
+    color: #3e3e3e;
+}
+
+.title_h2 {
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.header {
+    padding: 12px 0 13px;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.149);
+    background: #fbfbfb;
+}
+
+.header__top {
+    padding: 0 0 12px;
+}
+
+.header__bottom {
+    padding: 12px 0 0;
+    border-top: 1px solid #cecece;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__right {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 56px;
+}
+
+.header__button {
+    width: 204px;
+    line-height: 1.7;
+}
+
+.services {
+    padding: 56px 0;
+}
