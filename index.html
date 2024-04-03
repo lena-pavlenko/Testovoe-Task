@@ -19,14 +19,34 @@
                             </a>
                         </div>
                         <div class="header__right">
-                            <nav class="menu header__menu">
-                                <a href="#" class="menu__link">Автомобили в наличии</a>
-                                <a href="#" class="menu__link">Спецпредложения</a>
-                                <a href="#" class="menu__link">Продать авто</a>
-                                <a href="#" class="menu__link">Сервис</a>
-                                <a href="#" class="menu__link">Контакты</a>
-                            </nav>
+                            <div class="menu header__menu">
+                                <nav class="menu__list">
+                                    <a href="#" class="menu__link">Автомобили в наличии</a>
+                                    <a href="#" class="menu__link">Спецпредложения</a>
+                                    <a href="#" class="menu__link">Продать авто</a>
+                                    <a href="#" class="menu__link">Сервис</a>
+                                    <a href="#" class="menu__link">Контакты</a>
+                                </nav>
+                                <div class="menu__info">
+                                    <div class="route-block">
+                                        <div class="route-block__item route-block__item_map">
+                                            Олимпийский просп., 5, стр. 1, Москва
+                                        </div>
+                                        <a href="#" class="route-block__item route-block__item_loc">
+                                            Проложить маршрут
+                                        </a>
+                                    </div>
+                                    <div class="clock-block">
+                                        <div class="clock-block__item">9:00 - 21:00 (ежедневно)</div>
+                                    </div>
+                                </div>
+                                <button type="button" class="button button_bg menu__button">Заказать звонок</button>
+                            </div>
                             <button type="button" class="button button_bg header__button">Заказать звонок</button>
+                            <button type="button" class="menu-mob">
+                                <img src="assets/images/icons/burger.svg" class="menu-mob__menu" alt="">
+                                <img src="assets/images/icons/close.svg" class="menu-mob__close" alt="">
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -57,9 +77,9 @@
             <section class="services">
                 <div class="container">
                     <div class="services__content">
-                        <h2 class="title title_h2 services__title">Теперь услуги дилерского центра Вы можете можете получить онлайн!</h2>
+                        <h2 class="title title_h2 services__title">Теперь услуги дилерского центра Вы можете получить онлайн!</h2>
                         <div class="services-grid">
-                            <div class="service-card service-card_diagnosis">
+                            <div class="service-card service-card_diagnosis service-card_span">
                                 <div class="service-card__info">
                                     <div class="service-card__info-top">
                                         <h3 class="title title_h3 service-card__title">Диагностика автомобиля <br> перед покупкой</h3>
@@ -68,7 +88,7 @@
                                     <a href="#" class="button button_border button_md service-card__button">Записаться</a>
                                 </div>
                                 <div class="service-card__image">
-                                    <img src="/assets/images/car1.png" alt="">
+                                    <img src="assets/images/car1.png" alt="">
                                 </div>
                             </div>
                             <div class="service-card service-card_show">
@@ -80,19 +100,7 @@
                                     <a href="#" class="button button_border button_lg service-card__button">Оставить заявку</a>
                                 </div>
                                 <div class="service-card__image">
-                                    <img src="/assets/images/car2.png" alt="">
-                                </div>
-                            </div>
-                            <div class="service-card service-card_rating">
-                                <div class="service-card__info">
-                                    <div class="service-card__info-top">
-                                        <h3 class="title title_h3 service-card__title">Онлайн оценка автомобиля с пробегом</h3>
-                                        <p class="service-card__desc">Узнайте предварительную стоимость автомобиля за 1 мин, указав его параметры</p>
-                                    </div>
-                                    <a href="#" class="button button_border service-card__button">Оценить</a>
-                                </div>
-                                <div class="service-card__image">
-                                    <img src="/assets/images/car3.png" alt="">
+                                    <img src="assets/images/car2.png" alt="">
                                 </div>
                             </div>
                             <div class="service-card service-card_booking">
@@ -104,7 +112,19 @@
                                     <a href="#" class="button button_border button_lg service-card__button">Забронировать</a>
                                 </div>
                                 <div class="service-card__image">
-                                    <img src="/assets/images/phone.png" alt="">
+                                    <img src="assets/images/phone1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="service-card service-card_rating service-card_span">
+                                <div class="service-card__info">
+                                    <div class="service-card__info-top">
+                                        <h3 class="title title_h3 service-card__title">Онлайн оценка автомобиля с пробегом</h3>
+                                        <p class="service-card__desc">Узнайте предварительную стоимость автомобиля за 1 мин, указав его параметры</p>
+                                    </div>
+                                    <a href="#" class="button button_border service-card__button">Оценить</a>
+                                </div>
+                                <div class="service-card__image">
+                                    <img src="assets/images/car3.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -114,5 +134,6 @@
         </main>
         <footer class="footer"></footer>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

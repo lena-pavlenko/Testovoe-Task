@@ -14,6 +14,10 @@ img {
     display: block;
 }
 
+a {
+    color: inherit;
+}
+
 input,
 button,
 textarea,
@@ -29,6 +33,10 @@ body {
     font-family: 'Inter';
     font-weight: 400;
     font-size: 14px;
+}
+
+body.hidden {
+    overflow: hidden;
 }
 
 .wrapper {
@@ -52,10 +60,10 @@ body {
     padding: 0 20px;
 }
 
-.menu {
+.menu__list {
     display: flex;
     align-items: center;
-    column-gap: 32px;
+    gap: 32px;
 }
 
 .menu__link {
@@ -64,6 +72,51 @@ body {
     font-size: 13px;
     font-weight: 400;
     line-height: 1.5;
+}
+
+.menu__info {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 0 0;
+    margin: 20px 0 0;
+    border-top: 1px solid #cecece;
+}
+
+.menu-mob {
+    display: none;
+    width: 26.25px;
+    height: 17.5px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-right: 9px;
+}
+
+.menu-mob img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity .3s ease;
+}
+
+.menu-mob__close {
+    opacity: 0;
+    z-index: -1;
+}
+
+.menu-mob.opened .menu-mob__close {
+    opacity: 1;
+    z-index: 1;
+}
+
+.menu-mob.opened .menu-mob__menu {
+    opacity: 0;
+    z-index: -1;
 }
 
 .button {
@@ -105,6 +158,13 @@ body {
 
 .button_md {
     width: 143px;
+}
+
+.menu__button {
+    display: none;
+    width: 199px;
+    height: 45px;
+    margin: 20px 0 0;
 }
 
 .logo {
@@ -199,24 +259,25 @@ body {
     padding: 32px;
     border-radius: 12px;
     color: #ffffff;
-    background: url(../assets/images/bg-services.jpeg);
+    background-image: url(../assets/images/bg-services.jpeg);
+    background-size: cover;
     position: relative;
     overflow: hidden;
     min-height: 250px;
 }
 
-.service-card:first-child, 
-.service-card:nth-child(3) {
+.service-card_span {
     grid-row: span 2;
     padding-bottom: 311px;
 }
 
-.service-card:nth-child(2) {
-    background: url(../assets/images/bg-services2.jpeg);
+.service-card_show {
+    background-image: url(../assets/images/bg-services2.jpeg);
 }
 
-.service-card:nth-child(4) {
-    background: url(../assets/images/bg-services3.jpeg);
+.service-card_booking {
+    background-image: url(../assets/images/bg-services3.jpeg);
+    order: 4;
 }
 
 .service-card__image {
@@ -237,7 +298,7 @@ body {
 }
 
 .service-card_booking .service-card__image {
-    bottom: -121px;
+    bottom: 0;
     right: 9px;
     width: 125px;
 }
@@ -246,6 +307,10 @@ body {
     bottom: 13px;
     right: 11px;
     width: 347px;
+}
+
+.service-card_booking .service-card__desc {
+    max-width: 294px;
 }
 
 .service-card::after {
@@ -281,10 +346,16 @@ body {
 
 .service-card__info {
     max-width: 320px;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: 100%;
 }
 
 .service-card__info-top {
-    margin: 0 0 32px;
+    flex-grow: 1;
 }
 
 .service-card__title {
@@ -300,15 +371,13 @@ body {
 }
 
 .service-card__button {
-    font-size: 14px;
     font-weight: 600;
     line-height: 1.21;
     letter-spacing: 0.46px;
-    padding: 14px 0;
     height: 45px;
+    padding: 14px 26px;
+    width: fit-content;
 }
-
-
 
 .header {
     padding: 12px 0 13px;
@@ -318,6 +387,7 @@ body {
 
 .header__top {
     padding: 0 0 12px;
+    position: relative;
 }
 
 .header__bottom {
@@ -335,6 +405,7 @@ body {
     display: flex;
     justify-content: flex-end;
     column-gap: 56px;
+    align-items: center;
 }
 
 .header__button {
@@ -349,4 +420,228 @@ body {
 
 .services__title {
     margin: 0 0 32px;
+}
+
+/* md */
+@media(max-width: 1199px) {
+    .container {
+        max-width: 892px;
+    }
+
+    .header__right {
+        column-gap: 32px;
+    }
+
+    .header__button {
+        width: 199px;
+    }
+
+    .header__menu {
+        display: none;
+        position: absolute;
+        background: #fff;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        top: 68px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.149);
+        z-index: 20;
+    }
+
+    .menu__list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .menu__link {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .menu.opened {
+        display: block;
+    }
+
+    .menu-mob {
+        display: block;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card {
+        background-image: url(../assets/images/bg-services.jpeg);
+        min-height: auto;
+    }
+
+    .service-card_span {
+        grid-row: auto;
+        padding-bottom: 32px;
+    }
+
+    .service-card_booking {
+        order: initial;
+    }
+
+    .service-card::after {
+        display: none;
+    }
+
+    .service-card__image {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .service-card__image img{
+        max-height: 100%;
+    }
+
+    .service-card .service-card__image {
+        right: 6px;
+        left: auto;
+        bottom: 0;
+        width: 217px;
+        height: 93px;
+    }
+
+    .service-card_booking .service-card__image {
+        right: 30px;
+    }
+
+    .services__title {
+        margin: 0 0 32px;
+        max-width: 660px;
+    }
+
+    .service-card_booking .service-card__desc {
+        max-width: 100%;
+    }
+
+    .service-card__button {
+        width: 148px;
+        padding: 14px 10px;
+    }
+}
+
+/* sm */
+@media(max-width: 899px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .header__bottom {
+        display: none;
+    }
+
+    .header__top {
+        padding: 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card .service-card__image {
+        right: 20px;
+        width: 287px;
+        height: 123px;
+    }
+
+    .service-card_booking .service-card__image {
+        right: 40px;
+    }
+    
+}
+
+/* xs*/
+@media(max-width: 599px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .title_h2 {
+        font-size: 16px;
+    }
+
+    .title_h3 {
+        font-size: 16px;
+    }
+
+    .route-block {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .menu__info {
+        display: flex;
+    }
+
+    .menu__button {
+        display: inline-block;
+    }
+
+    .header {
+        padding: 18px 0 16px;
+    }
+
+    .header__menu {
+        top: 63px;
+    }
+    
+    .header__button {
+        display: none;
+    }
+
+    .services {
+        padding: 36px 0;
+    }
+
+    .services__title {
+        margin: 0 0 24px;
+        max-width: 300px;
+    }
+
+    .service-card {
+        padding: 16px;
+    }
+
+    .service-card__desc {
+        font-size: 14px;
+        max-width: 284px;
+    }
+
+    .service-card_booking .service-card__desc {
+        max-width: 294px;
+    }
+
+    .service-card__title {
+        margin: 0 0 8px;
+        max-width: 215px;
+    }
+
+    .service-card__info {
+        gap: 33px;
+        max-width: 100%;
+    }
+
+    .service-card__button {
+        height: 41px;
+        padding: 12px 0;
+    }
+
+    .service-card .service-card__image {
+        right: 8px;
+        width: 149px;
+        height: 68px;
+    }
+
+    .service-card_booking .service-card__image {
+        right: 26px;
+    }
 }
