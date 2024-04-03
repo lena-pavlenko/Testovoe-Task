@@ -1,0 +1,74 @@
+*, 
+::after, 
+::before {
+    box-sizing: border-box;
+}
+
+ul[class], 
+ol[class] {
+  list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header, .footer {
+    flex-shrink: 1;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+[class^="ico-"], [class*=" ico-"] {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-clock:before {
+    content: "\e900";
+  }
+  .ico-location:before {
+    content: "\e901";
+  }
+  .ico-map:before {
+    content: "\e902";
+  }
+  .ico-play:before {
+    content: "\e903";
+  }
+  .ico-search:before {
+    content: "\e904";
+  }
+  
