@@ -4,36 +4,6 @@
     box-sizing: border-box;
 }
 
-[class^="ico-"], [class*=" ico-"] {
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.ico-clock:before {
-    content: "\e900";
-}
-.ico-location:before {
-    content: "\e901";
-}
-.ico-map:before {
-    content: "\e902";
-}
-.ico-play:before {
-    content: "\e903";
-}
-.ico-search:before {
-    content: "\e904";
-}
-
-
 ul[class], 
 ol[class] {
   list-style: none;
@@ -99,22 +69,42 @@ body {
 .button {
     padding: 0;
     background: transparent;
+    text-decoration: none;
     border: none;
     cursor: pointer;
     font-size: 14px;
     border-radius: 12px;
     font-weight: 500;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     min-width: 119px;
-    height: 40px;
     color: #fbfbfb;
+    transition: .3s ease-in;
 }
 
 .button_bg {
     background: #0b457f;
+}
+
+.button_bg:hover {
+    background: #006cd8;
+}
+
+.button_border {
+    border: 1px solid #ffffff;
+    color: #fff; 
+}
+
+.button_border:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.button_lg {
+    width: 180px;
+}
+
+.button_md {
+    width: 143px;
 }
 
 .logo {
@@ -194,6 +184,132 @@ body {
     line-height: 1.25;
 }
 
+.title_h3 {
+    font-size: 18px;
+    line-height: 1.22;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.service-card {
+    padding: 32px;
+    border-radius: 12px;
+    color: #ffffff;
+    background: url(../assets/images/bg-services.jpeg);
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+}
+
+.service-card:first-child, 
+.service-card:nth-child(3) {
+    grid-row: span 2;
+    padding-bottom: 311px;
+}
+
+.service-card:nth-child(2) {
+    background: url(../assets/images/bg-services2.jpeg);
+}
+
+.service-card:nth-child(4) {
+    background: url(../assets/images/bg-services3.jpeg);
+}
+
+.service-card__image {
+    position: absolute;
+    z-index: 2;
+}
+
+.service-card_diagnosis .service-card__image {
+    bottom: 13px;
+    left: 12px;
+    width: 400px;
+}
+
+.service-card_show .service-card__image {
+    bottom: -12px;
+    right: -50px;
+    width: 231px;
+}
+
+.service-card_booking .service-card__image {
+    bottom: -121px;
+    right: 9px;
+    width: 125px;
+}
+
+.service-card_rating .service-card__image {
+    bottom: 13px;
+    right: 11px;
+    width: 347px;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(18, 18, 18, 0.3);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    z-index: 1;
+    display: none;
+}
+
+.service-card_show::after {
+    background-image: url(../assets/images/icons/play.svg);
+    background-size: 54px 62px;
+    width: 195px;
+    height: 195px;
+    right: 57px;
+    bottom: 0;
+    display: block;
+}
+
+.service-card_rating::after {
+    background-image: url(../assets/images/icons/search.svg);
+    background-size: 133px 154px;
+    width: 331px;
+    height: 331px;
+    left: -43px;
+    bottom: -70px;
+    display: block;
+}
+
+.service-card__info {
+    max-width: 320px;
+}
+
+.service-card__info-top {
+    margin: 0 0 32px;
+}
+
+.service-card__title {
+    margin: 0 0 12px;
+    color: inherit;
+}
+
+.service-card__desc {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29;
+}
+
+.service-card__button {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.21;
+    letter-spacing: 0.46px;
+    padding: 14px 0;
+    height: 45px;
+}
+
+
+
 .header {
     padding: 12px 0 13px;
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.149);
@@ -223,9 +339,14 @@ body {
 
 .header__button {
     width: 204px;
+    height: 40px;
     line-height: 1.7;
 }
 
 .services {
     padding: 56px 0;
+}
+
+.services__title {
+    margin: 0 0 32px;
 }
